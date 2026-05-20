@@ -12,7 +12,6 @@
       --brand-rose:   #ec4899;
       --brand-coral:  #f97316;
       --brand-mint:   #10b981;
-
       --bg:        #faf7ff;
       --bg-soft:   #f3eeff;
       --bg-card:   #ffffff;
@@ -21,8 +20,6 @@
       --text:      #1e1040;
       --text-sub:  #6b5e8a;
       --text-muted:#9d8fc4;
-
-      /* 교사 화면용 (약간 진한 연보라 배경) */
       --t-bg:      #f0ebff;
       --t-card:    #ffffff;
       --t-border:  #ddd4f8;
@@ -32,323 +29,116 @@
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);}
     .brand{font-family:'Gmarket Sans','Noto Sans KR',sans-serif;}
-
-    /* ── 공통 pill ── */
     .pill{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;font-size:.68rem;font-weight:700;padding:.3rem .85rem;letter-spacing:.04em;}
-
-    /* ════════════════════════════
-       LOBBY
-    ════════════════════════════ */
-    .lobby{
-      min-height:100svh;
-      background: linear-gradient(145deg,#fdf4ff 0%,#f0e9ff 40%,#fce7f3 100%);
-      display:flex;align-items:center;justify-content:center;padding:1.5rem;
-      position:relative;overflow:hidden;
-    }
-    .lobby::before{
-      content:'';position:absolute;width:480px;height:480px;border-radius:50%;
-      background:radial-gradient(circle,rgba(167,139,250,.18) 0%,transparent 70%);
-      top:-160px;right:-120px;
-    }
-    .lobby::after{
-      content:'';position:absolute;width:320px;height:320px;border-radius:50%;
-      background:radial-gradient(circle,rgba(244,114,182,.14) 0%,transparent 70%);
-      bottom:-80px;left:-60px;
-    }
-    .lobby-card{
-      width:100%;max-width:460px;position:relative;z-index:2;
-      background:rgba(255,255,255,.82);
-      border:1.5px solid var(--border-md);
-      border-radius:2rem;padding:2.5rem 2rem;
-      backdrop-filter:blur(20px);
-      box-shadow:0 8px 40px rgba(124,58,237,.12),0 2px 0 rgba(255,255,255,.9) inset;
-    }
-    .lobby-badge{
-      background:linear-gradient(90deg,#ede9fe,#fce7f3);
-      border:1px solid #d8b4fe;color:#7c3aed;
-    }
-    .lobby-title{
-      font-family:'Gmarket Sans',sans-serif;font-size:2.1rem;font-weight:700;line-height:1;
-      margin:.6rem 0 .3rem;
-      background:linear-gradient(90deg,#7c3aed,#ec4899,#f97316);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    .lobby{min-height:100svh;background:linear-gradient(145deg,#fdf4ff 0%,#f0e9ff 40%,#fce7f3 100%);display:flex;align-items:center;justify-content:center;padding:1.5rem;position:relative;overflow:hidden;}
+    .lobby::before{content:'';position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.18) 0%,transparent 70%);top:-160px;right:-120px;}
+    .lobby::after{content:'';position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(244,114,182,.14) 0%,transparent 70%);bottom:-80px;left:-60px;}
+    .lobby-card{width:100%;max-width:460px;position:relative;z-index:2;background:rgba(255,255,255,.82);border:1.5px solid var(--border-md);border-radius:2rem;padding:2.5rem 2rem;backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(124,58,237,.12),0 2px 0 rgba(255,255,255,.9) inset;}
+    .lobby-badge{background:linear-gradient(90deg,#ede9fe,#fce7f3);border:1px solid #d8b4fe;color:#7c3aed;}
+    .lobby-title{font-family:'Gmarket Sans',sans-serif;font-size:2.1rem;font-weight:700;line-height:1;margin:.6rem 0 .3rem;background:linear-gradient(90deg,#7c3aed,#ec4899,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .lobby-sub{font-size:.82rem;color:var(--text-sub);line-height:1.8;margin-bottom:1.6rem;}
-
-    .lobby-input{
-      width:100%;height:3.2rem;
-      background:#f8f5ff;border:1.5px solid var(--border-md);
-      border-radius:1rem;padding:0 1rem;font-size:.95rem;font-weight:700;
-      text-transform:uppercase;color:var(--text);outline:none;
-      transition:border .2s,box-shadow .2s;font-family:'Noto Sans KR',sans-serif;
-    }
+    .lobby-input{width:100%;height:3.2rem;background:#f8f5ff;border:1.5px solid var(--border-md);border-radius:1rem;padding:0 1rem;font-size:.95rem;font-weight:700;text-transform:uppercase;color:var(--text);outline:none;transition:border .2s,box-shadow .2s;font-family:'Noto Sans KR',sans-serif;}
     .lobby-input::placeholder{color:var(--text-muted);text-transform:none;font-weight:400;}
     .lobby-input:focus{border-color:#a78bfa;box-shadow:0 0 0 3px rgba(167,139,250,.15);}
-
     .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.25rem;}
-    .role-btn{
-      height:6.5rem;border-radius:1.5rem;border:none;cursor:pointer;color:#fff;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;
-      font-size:.88rem;font-weight:700;font-family:'Noto Sans KR',sans-serif;
-      transition:transform .2s,box-shadow .2s;
-    }
+    .role-btn{height:6.5rem;border-radius:1.5rem;border:none;cursor:pointer;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;font-size:.88rem;font-weight:700;font-family:'Noto Sans KR',sans-serif;transition:transform .2s,box-shadow .2s;}
     .role-btn:hover{transform:translateY(-3px);}
-    .role-btn.teacher{
-      background:linear-gradient(135deg,#6d28d9,#a78bfa);
-      box-shadow:0 8px 24px rgba(109,40,217,.3);
-    }
-    .role-btn.student{
-      background:linear-gradient(135deg,#be185d,#f472b6);
-      box-shadow:0 8px 24px rgba(190,24,93,.28);
-    }
+    .role-btn.teacher{background:linear-gradient(135deg,#6d28d9,#a78bfa);box-shadow:0 8px 24px rgba(109,40,217,.3);}
+    .role-btn.student{background:linear-gradient(135deg,#be185d,#f472b6);box-shadow:0 8px 24px rgba(190,24,93,.28);}
     .role-btn .rb-icon{font-size:1.75rem;}
     .lobby-tip{font-size:.65rem;color:var(--text-muted);text-align:center;margin-top:1rem;line-height:1.9;}
-
-    /* ════════════════════════════
-       TEACHER (라이트 테마)
-    ════════════════════════════ */
-    .teacher-wrap{
-      min-height:100svh;
-      background: linear-gradient(160deg,#f5f0ff 0%,#fdf4ff 50%,#fef3f2 100%);
-      display:flex;flex-direction:column;padding:.9rem 1.1rem;
-    }
-    .t-header{
-      display:flex;align-items:center;justify-content:space-between;
-      border-bottom:1.5px solid var(--t-border);
-      padding-bottom:.7rem;margin-bottom:.75rem;gap:.5rem;flex-wrap:wrap;
-    }
-    .t-label{
-      font-family:'Gmarket Sans',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.09em;
-      background:linear-gradient(90deg,#7c3aed,#ec4899);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    .teacher-wrap{min-height:100svh;background:linear-gradient(160deg,#f5f0ff 0%,#fdf4ff 50%,#fef3f2 100%);display:flex;flex-direction:column;padding:.9rem 1.1rem;}
+    .t-header{display:flex;align-items:center;justify-content:space-between;border-bottom:1.5px solid var(--t-border);padding-bottom:.7rem;margin-bottom:.75rem;gap:.5rem;flex-wrap:wrap;}
+    .t-label{font-family:'Gmarket Sans',sans-serif;font-size:.63rem;font-weight:700;letter-spacing:.09em;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .t-title{font-family:'Gmarket Sans',sans-serif;font-size:1.3rem;font-weight:700;color:var(--t-text);}
-    .t-header-right{display:flex;align-items:center;gap:.5rem;}
+    .t-header-right{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
     .room-pill{background:#ede9fe;border:1px solid #c4b5fd;color:#6d28d9;}
     .count-pill{background:#d1fae5;border:1px solid #6ee7b7;color:#065f46;}
     .count-pill strong{color:#059669;}
-    .reset-btn{
-      background:#fff;border:1.5px solid #e5e7eb;color:#9ca3af;
-      font-size:.68rem;padding:.3rem .7rem;border-radius:.5rem;cursor:pointer;transition:.2s;
-      font-family:'Noto Sans KR',sans-serif;
-    }
+    .sync-pill-ok{font-size:.62rem;font-weight:700;padding:.3rem .75rem;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;}
+    .sync-pill-err{font-size:.62rem;font-weight:700;padding:.3rem .75rem;border-radius:999px;background:#fff7ed;border:1px solid #fed7aa;color:#c2410c;}
+    .reset-btn{background:#fff;border:1.5px solid #e5e7eb;color:#9ca3af;font-size:.68rem;padding:.3rem .7rem;border-radius:.5rem;cursor:pointer;transition:.2s;font-family:'Noto Sans KR',sans-serif;}
     .reset-btn:hover{color:#ef4444;border-color:#fca5a5;}
-
     .t-main{display:grid;grid-template-columns:270px 1fr 350px;gap:.8rem;flex:1;min-height:0;}
-
-    /* LEFT */
     .t-left{display:flex;flex-direction:column;gap:.7rem;min-height:0;}
-    .t-card{
-      background:var(--t-card);border:1.5px solid var(--t-border);
-      border-radius:1.5rem;overflow:hidden;
-      box-shadow:0 2px 12px rgba(124,58,237,.06);
-    }
+    .t-card{background:var(--t-card);border:1.5px solid var(--t-border);border-radius:1.5rem;overflow:hidden;box-shadow:0 2px 12px rgba(124,58,237,.06);}
     .qr-inner{padding:1.1rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;}
     .qr-label{font-size:.7rem;font-weight:700;color:#7c3aed;text-align:center;line-height:1.7;}
-
-    /* ── QR 대신 방 코드 강조 카드 ── */
-    .room-code-box{
-      width:100%;background:linear-gradient(135deg,#ede9fe,#fce7f3);
-      border:2px dashed #c4b5fd;border-radius:1.25rem;
-      padding:1.1rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;
-    }
-    .room-code-big{
-      font-family:'Gmarket Sans',sans-serif;font-size:2rem;font-weight:700;letter-spacing:.12em;
-      color:#6d28d9;text-align:center;word-break:break-all;
-    }
+    .room-code-box{width:100%;background:linear-gradient(135deg,#ede9fe,#fce7f3);border:2px dashed #c4b5fd;border-radius:1.25rem;padding:1.1rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+    .room-code-big{font-family:'Gmarket Sans',sans-serif;font-size:2rem;font-weight:700;letter-spacing:.12em;color:#6d28d9;text-align:center;word-break:break-all;}
     .room-code-label{font-size:.68rem;color:#9d8fc4;font-weight:600;text-align:center;line-height:1.6;}
-
-    /* 접속 URL 직접 입력 박스 */
-    .access-url-box{
-      width:100%;background:#f8f5ff;border:1.5px solid #ddd4f8;
-      border-radius:1rem;padding:.6rem .9rem;
-      font-size:.62rem;color:#7c6faa;font-weight:600;line-height:1.7;
-      text-align:center;word-break:break-all;
-    }
-    .access-url-highlight{
-      display:block;font-family:'Gmarket Sans',sans-serif;
-      font-size:.85rem;font-weight:700;color:#7c3aed;margin-top:.15rem;letter-spacing:.04em;
-    }
-
+    .access-url-box{width:100%;background:#f8f5ff;border:1.5px solid #ddd4f8;border-radius:1rem;padding:.6rem .9rem;font-size:.62rem;color:#7c6faa;font-weight:600;line-height:1.7;text-align:center;word-break:break-all;}
+    .access-url-highlight{display:block;font-family:'Gmarket Sans',sans-serif;font-size:.85rem;font-weight:700;color:#7c3aed;margin-top:.15rem;letter-spacing:.04em;}
     .stats-inner{padding:1.1rem;display:flex;flex-direction:column;gap:.55rem;flex:1;}
     .stats-head{font-size:.62rem;font-weight:700;color:var(--t-muted);letter-spacing:.07em;text-transform:uppercase;}
     .stat-row{display:flex;flex-direction:column;gap:.2rem;}
     .stat-top{display:flex;justify-content:space-between;align-items:center;font-size:.67rem;font-weight:700;color:#7c6faa;}
     .stat-bar-bg{height:.5rem;background:#f3eeff;border-radius:999px;overflow:hidden;}
     .stat-bar-fill{height:100%;border-radius:999px;transition:width .9s ease;}
-
-    /* CENTER thermometer */
-    .thermo-card{
-      background:linear-gradient(160deg,#fdfbff 0%,#f9f4ff 100%);
-      border:1.5px solid var(--t-border);
-      border-radius:2rem;padding:1.25rem 1.5rem;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      position:relative;overflow:hidden;
-      box-shadow:0 2px 16px rgba(124,58,237,.07);
-    }
-    .thermo-card::before{
-      content:'';position:absolute;inset:0;pointer-events:none;
-      background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(167,139,250,.1) 0%,transparent 60%);
-    }
-    .thermo-heading{
-      font-family:'Gmarket Sans',sans-serif;font-size:.88rem;font-weight:700;
-      background:linear-gradient(90deg,#7c3aed,#ec4899);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-      letter-spacing:.04em;margin-bottom:1.1rem;position:relative;z-index:2;
-    }
+    .thermo-card{background:linear-gradient(160deg,#fdfbff 0%,#f9f4ff 100%);border:1.5px solid var(--t-border);border-radius:2rem;padding:1.25rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(124,58,237,.07);}
+    .thermo-card::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(167,139,250,.1) 0%,transparent 60%);}
+    .thermo-heading{font-family:'Gmarket Sans',sans-serif;font-size:.88rem;font-weight:700;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.04em;margin-bottom:1.1rem;position:relative;z-index:2;}
     .thermo-outer{display:flex;align-items:flex-end;gap:1.25rem;position:relative;z-index:2;}
-
     .thermo-scale{display:flex;flex-direction:column;justify-content:space-between;height:400px;align-items:flex-end;}
     .scale-tick{display:flex;align-items:center;gap:.4rem;font-size:.67rem;font-weight:700;}
     .scale-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-
     .thermo-body{position:relative;width:60px;height:400px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
-    .tube-glass{
-      position:absolute;bottom:50px;left:50%;transform:translateX(-50%);
-      width:38px;height:350px;
-      background:rgba(255,255,255,.5);
-      border:2.5px solid rgba(167,139,250,.35);
-      border-radius:19px 19px 0 0;
-      overflow:hidden;
-      display:flex;flex-direction:column;justify-content:flex-end;
-      box-shadow:inset 0 2px 8px rgba(124,58,237,.08),0 0 0 1px rgba(255,255,255,.8);
-    }
-    .tube-glass::after{
-      content:'';position:absolute;top:10px;left:6px;width:5px;height:calc(100% - 20px);
-      background:rgba(255,255,255,.5);border-radius:3px;pointer-events:none;
-    }
+    .tube-glass{position:absolute;bottom:50px;left:50%;transform:translateX(-50%);width:38px;height:350px;background:rgba(255,255,255,.5);border:2.5px solid rgba(167,139,250,.35);border-radius:19px 19px 0 0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:inset 0 2px 8px rgba(124,58,237,.08),0 0 0 1px rgba(255,255,255,.8);}
+    .tube-glass::after{content:'';position:absolute;top:10px;left:6px;width:5px;height:calc(100% - 20px);background:rgba(255,255,255,.5);border-radius:3px;pointer-events:none;}
     .tube-layer{width:100%;transition:height 1.2s cubic-bezier(.34,1.4,.64,1);position:relative;overflow:hidden;}
     .tube-layer::after{content:'';position:absolute;top:0;left:3px;right:3px;height:2px;background:rgba(255,255,255,.6);border-radius:999px;}
     .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);animation:rise 2.6s ease-in infinite;}
     @keyframes rise{0%{transform:translateY(0) scale(1);opacity:.5}100%{transform:translateY(-55px) scale(.35);opacity:0}}
-
-    .thermo-bulb{
-      width:56px;height:56px;border-radius:50%;
-      border:3px solid rgba(167,139,250,.3);
-      display:flex;align-items:center;justify-content:center;
-      transition:background .8s;position:relative;z-index:1;flex-shrink:0;
-      box-shadow:0 4px 16px rgba(0,0,0,.12);
-    }
+    .thermo-bulb{width:56px;height:56px;border-radius:50%;border:3px solid rgba(167,139,250,.3);display:flex;align-items:center;justify-content:center;transition:background .8s;position:relative;z-index:1;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.12);}
     .bulb-inner{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;}
-
     .reason-bubbles-wrap{position:absolute;top:0;left:0;right:0;bottom:50px;pointer-events:none;overflow:hidden;}
-    .reason-bubble{
-      position:absolute;transform:translateX(-50%);
-      background:rgba(255,255,255,.96);color:#1e1040;
-      font-size:.54rem;font-weight:700;line-height:1.3;
-      padding:.2rem .5rem;border-radius:.4rem;
-      white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;
-      pointer-events:none;
-      box-shadow:0 2px 8px rgba(0,0,0,.1);
-      animation:floatUp 6.5s ease-in-out forwards;
-    }
+    .reason-bubble{position:absolute;transform:translateX(-50%);background:rgba(255,255,255,.96);color:#1e1040;font-size:.54rem;font-weight:700;line-height:1.3;padding:.2rem .5rem;border-radius:.4rem;white-space:nowrap;max-width:130px;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.1);animation:floatUp 6.5s ease-in-out forwards;}
     @keyframes floatUp{0%{bottom:-16px;opacity:0}12%{opacity:1}80%{opacity:.9}100%{bottom:calc(100% + 4px);opacity:0}}
-
     .thermo-summary{display:flex;flex-direction:column;gap:.45rem;max-width:175px;}
     .avg-label{font-size:.65rem;font-weight:700;letter-spacing:.06em;color:var(--t-muted);}
     .avg-num{font-family:'Gmarket Sans',sans-serif;font-size:3.8rem;line-height:1;transition:color .8s;}
     .avg-unit{font-size:1.3rem;color:var(--t-muted);}
     .avg-desc{font-size:.75rem;color:var(--t-sub);line-height:1.7;}
-
-    /* RIGHT feed */
-    .feed-card{
-      background:var(--t-card);border:1.5px solid var(--t-border);
-      border-radius:1.5rem;padding:1.1rem;display:flex;flex-direction:column;min-height:0;
-      box-shadow:0 2px 12px rgba(124,58,237,.06);
-    }
+    .feed-card{background:var(--t-card);border:1.5px solid var(--t-border);border-radius:1.5rem;padding:1.1rem;display:flex;flex-direction:column;min-height:0;box-shadow:0 2px 12px rgba(124,58,237,.06);}
     .feed-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1.5px solid var(--t-border);padding-bottom:.6rem;margin-bottom:.7rem;flex-shrink:0;}
     .feed-head-title{font-size:.88rem;font-weight:700;color:var(--t-text);}
     .feed-count{font-size:.62rem;background:#f3eeff;color:#7c3aed;padding:.2rem .6rem;border-radius:999px;font-weight:700;}
     .feed-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.45rem;min-height:0;}
     .feed-list::-webkit-scrollbar{width:3px;}
     .feed-list::-webkit-scrollbar-thumb{background:#ddd4f8;border-radius:3px;}
-    .feed-item{
-      background:#faf8ff;border-radius:.875rem;padding:.65rem .85rem;
-      display:flex;gap:.55rem;align-items:flex-start;
-      border:1.5px solid transparent;flex-shrink:0;
-      animation:slideIn .35s ease;
-    }
+    .feed-item{background:#faf8ff;border-radius:.875rem;padding:.65rem .85rem;display:flex;gap:.55rem;align-items:flex-start;border:1.5px solid transparent;flex-shrink:0;animation:slideIn .35s ease;}
     @keyframes slideIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
     .feed-badge{padding:.18rem .45rem;border-radius:.35rem;color:#fff;font-size:.62rem;font-weight:900;flex-shrink:0;margin-top:.1rem;}
     .feed-reason{font-size:.75rem;color:var(--t-text);line-height:1.5;font-weight:500;}
     .feed-meta{font-size:.58rem;color:var(--text-muted);margin-top:.12rem;}
     .feed-empty{text-align:center;color:#c4b5fd;padding:2rem 1rem;font-size:.78rem;line-height:2;}
-
-    .t-footer{
-      margin-top:.7rem;padding:.8rem 1.1rem;
-      background:#f5f0ff;border:1.5px solid #ddd4f8;
-      border-radius:1.1rem;font-size:.7rem;color:var(--t-muted);line-height:1.7;flex-shrink:0;
-    }
+    .t-footer{margin-top:.7rem;padding:.8rem 1.1rem;background:#f5f0ff;border:1.5px solid #ddd4f8;border-radius:1.1rem;font-size:.7rem;color:var(--t-muted);line-height:1.7;flex-shrink:0;}
     .t-footer strong{color:#7c3aed;}
-
-    /* ════════════════════════════
-       STUDENT (라이트 테마)
-    ════════════════════════════ */
-    .student-wrap{
-      min-height:100svh;
-      background:linear-gradient(160deg,#fdf4ff 0%,#f0e9ff 50%,#fce7f3 100%);
-      display:flex;align-items:center;justify-content:center;padding:1rem;
-      position:relative;overflow:hidden;
-    }
-    .student-wrap::before{
-      content:'';position:fixed;top:-60px;right:-80px;width:300px;height:300px;border-radius:50%;
-      background:radial-gradient(circle,rgba(167,139,250,.2) 0%,transparent 70%);pointer-events:none;
-    }
-    .student-wrap::after{
-      content:'';position:fixed;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;
-      background:radial-gradient(circle,rgba(244,114,182,.16) 0%,transparent 70%);pointer-events:none;
-    }
-    .student-card{
-      width:100%;max-width:420px;position:relative;z-index:2;
-      background:rgba(255,255,255,.92);border:1.5px solid #ddd4f8;
-      border-radius:2rem;padding:1.5rem;
-      box-shadow:0 12px 48px rgba(124,58,237,.12),0 2px 0 rgba(255,255,255,.9) inset;
-      backdrop-filter:blur(12px);
-    }
-
+    .student-wrap{min-height:100svh;background:linear-gradient(160deg,#fdf4ff 0%,#f0e9ff 50%,#fce7f3 100%);display:flex;align-items:center;justify-content:center;padding:1rem;position:relative;overflow:hidden;}
+    .student-wrap::before{content:'';position:fixed;top:-60px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.2) 0%,transparent 70%);pointer-events:none;}
+    .student-wrap::after{content:'';position:fixed;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(244,114,182,.16) 0%,transparent 70%);pointer-events:none;}
+    .student-card{width:100%;max-width:420px;position:relative;z-index:2;background:rgba(255,255,255,.92);border:1.5px solid #ddd4f8;border-radius:2rem;padding:1.5rem;box-shadow:0 12px 48px rgba(124,58,237,.12),0 2px 0 rgba(255,255,255,.9) inset;backdrop-filter:blur(12px);}
     .s-header{padding-bottom:1rem;margin-bottom:1rem;border-bottom:1.5px solid #ede9fe;}
     .s-top-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;}
     .s-badge{background:linear-gradient(90deg,#ede9fe,#fce7f3);border:1px solid #d8b4fe;color:#7c3aed;}
-    .s-project-name{
-      font-family:'Gmarket Sans',sans-serif;font-size:1.55rem;font-weight:700;
-      background:linear-gradient(90deg,#7c3aed,#ec4899,#f97316);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    .s-project-name{font-family:'Gmarket Sans',sans-serif;font-size:1.55rem;font-weight:700;background:linear-gradient(90deg,#7c3aed,#ec4899,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .s-subtitle{font-size:.78rem;color:var(--text-sub);margin-top:.15rem;line-height:1.6;}
-
-    .emo-btn{
-      width:100%;padding:.75rem .9rem;border-radius:1.1rem;
-      border:1.5px solid #ede9fe;background:#fdf9ff;
-      cursor:pointer;text-align:left;display:flex;align-items:center;gap:.7rem;
-      margin-bottom:.45rem;transition:.2s;color:var(--text);
-    }
+    .emo-btn{width:100%;padding:.75rem .9rem;border-radius:1.1rem;border:1.5px solid #ede9fe;background:#fdf9ff;cursor:pointer;text-align:left;display:flex;align-items:center;gap:.7rem;margin-bottom:.45rem;transition:.2s;color:var(--text);}
     .emo-btn:hover{background:#f5eeff;border-color:#c4b5fd;}
     .emo-btn.selected{border-color:var(--sel-color);background:var(--sel-bg);transform:scale(1.01);box-shadow:0 4px 16px rgba(0,0,0,.08);}
     .emo-icon{width:2.1rem;height:2.1rem;border-radius:.7rem;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
     .emo-name{font-weight:800;font-size:.83rem;color:var(--text);}
     .emo-desc{font-size:.67rem;color:var(--text-muted);margin-top:.08rem;}
     .selected-badge{margin-left:auto;font-size:.58rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;flex-shrink:0;color:#fff;}
-
     .reason-area{border-radius:1.1rem;border:1.5px solid;padding:.9rem;margin-top:.25rem;transition:.3s;}
     .reason-area label{font-size:.73rem;font-weight:800;color:var(--text);display:block;margin-bottom:.45rem;}
-    .reason-area textarea{
-      width:100%;height:4.2rem;background:rgba(255,255,255,.7);border:none;
-      border-radius:.7rem;padding:.55rem .7rem;font-size:.78rem;outline:none;resize:none;
-      font-family:'Noto Sans KR',sans-serif;color:var(--text);
-    }
+    .reason-area textarea{width:100%;height:4.2rem;background:rgba(255,255,255,.7);border:none;border-radius:.7rem;padding:.55rem .7rem;font-size:.78rem;outline:none;resize:none;font-family:'Noto Sans KR',sans-serif;color:var(--text);}
     .reason-area textarea::placeholder{color:#c4b5fd;}
     .reason-area textarea:focus{background:rgba(255,255,255,.95);box-shadow:inset 0 0 0 1.5px rgba(124,58,237,.2);}
     .reason-footer{display:flex;justify-content:space-between;font-size:.62rem;color:var(--text-muted);margin-top:.3rem;font-weight:600;}
-
-    .submit-btn{
-      width:100%;height:3rem;border-radius:1rem;border:none;color:#fff;
-      font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:.95rem;font-weight:700;
-      cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;
-      transition:.2s;margin-top:.7rem;letter-spacing:.03em;
-    }
+    .submit-btn{width:100%;height:3rem;border-radius:1rem;border:none;color:#fff;font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:.2s;margin-top:.7rem;letter-spacing:.03em;}
     .submit-btn:disabled{opacity:.3;cursor:not-allowed;}
     .submit-btn:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18);}
-
     .success-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1rem;gap:1rem;}
     .success-anim{width:4.5rem;height:4.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,#7c3aed,#ec4899);animation:popIn .5s cubic-bezier(.34,1.56,.64,1);}
     @keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
@@ -356,35 +146,13 @@
     .success-sub{font-size:.8rem;color:var(--text-sub);line-height:1.8;}
     .again-btn{background:#f5f0ff;border:1.5px solid #c4b5fd;color:#7c3aed;padding:.6rem 1.4rem;border-radius:.875rem;font-size:.75rem;font-weight:700;cursor:pointer;transition:.2s;font-family:'Noto Sans KR',sans-serif;}
     .again-btn:hover{background:#ede9fe;}
-
     .back-link{text-align:center;margin-top:.9rem;}
     .back-link button{background:none;border:none;font-size:.62rem;color:var(--text-muted);text-decoration:underline;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
-
-    /* 학생 입력 화면 — 방 코드 입력 */
-    .join-card{
-      width:100%;max-width:420px;position:relative;z-index:2;
-      background:rgba(255,255,255,.92);border:1.5px solid #ddd4f8;
-      border-radius:2rem;padding:2rem;
-      box-shadow:0 12px 48px rgba(124,58,237,.12);
-      backdrop-filter:blur(12px);
-      display:flex;flex-direction:column;gap:1.2rem;
-    }
-    .join-input{
-      width:100%;height:3.5rem;
-      background:#f8f5ff;border:2px solid #c4b5fd;
-      border-radius:1rem;padding:0 1.1rem;font-size:1.3rem;font-weight:900;
-      text-transform:uppercase;text-align:center;letter-spacing:.15em;
-      color:#6d28d9;outline:none;font-family:'Gmarket Sans','Noto Sans KR',sans-serif;
-      transition:border .2s,box-shadow .2s;
-    }
+    .join-card{width:100%;max-width:420px;position:relative;z-index:2;background:rgba(255,255,255,.92);border:1.5px solid #ddd4f8;border-radius:2rem;padding:2rem;box-shadow:0 12px 48px rgba(124,58,237,.12);backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:1.2rem;}
+    .join-input{width:100%;height:3.5rem;background:#f8f5ff;border:2px solid #c4b5fd;border-radius:1rem;padding:0 1.1rem;font-size:1.3rem;font-weight:900;text-transform:uppercase;text-align:center;letter-spacing:.15em;color:#6d28d9;outline:none;font-family:'Gmarket Sans','Noto Sans KR',sans-serif;transition:border .2s,box-shadow .2s;}
     .join-input::placeholder{color:#c4b5fd;font-size:.9rem;letter-spacing:.04em;font-weight:400;}
     .join-input:focus{border-color:#7c3aed;box-shadow:0 0 0 3px rgba(124,58,237,.15);}
-    .join-btn{
-      width:100%;height:3.2rem;border-radius:1rem;border:none;
-      background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;
-      font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:1rem;font-weight:700;
-      cursor:pointer;transition:.2s;
-    }
+    .join-btn{width:100%;height:3.2rem;border-radius:1rem;border:none;background:linear-gradient(135deg,#7c3aed,#ec4899);color:#fff;font-family:'Gmarket Sans','Noto Sans KR',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:.2s;}
     .join-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,.3);}
     .join-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none;}
   </style>
@@ -392,67 +160,94 @@
 <body>
 <div id="root"></div>
 <script>
-// ══ 저장소 ══
-const STORE_KEY=r=>`maum_on_${r}`;
-function loadRes(r){try{return JSON.parse(localStorage.getItem(STORE_KEY(r))||'[]')}catch{return[]}}
-function saveRes(r,d){localStorage.setItem(STORE_KEY(r),JSON.stringify(d))}
+// ════════════════════════════════════════════════
+//  🔥 Firebase Realtime DB 설정
+//  ★ 아래 URL을 본인의 Firebase DB URL로 교체하세요 ★
+//  Firebase 콘솔(console.firebase.google.com) →
+//  Realtime Database → 상단에 표시된 URL 복사 후 붙여넣기
+// ════════════════════════════════════════════════
+const DB_URL = 'https://mind-on-ac92f-default-rtdb.firebaseio.com';
 
-// ══ 감정 ══
-const EMOTIONS=[
-  {value:40,label:'매우 화남',color:'#ea580c',bg:'#fff4ee',border:'#fed7aa',selBg:'#fff0e6',emoji:'🔥',desc:'속이 뜨겁고 붉은 불길처럼 화가 나요'},
-  {value:30,label:'기쁨',    color:'#d97706',bg:'#fffbeb',border:'#fde68a',selBg:'#fff8e1',emoji:'😄',desc:'햇살처럼 밝고 기분 좋은 설렘이 있어요'},
-  {value:20,label:'평온함',  color:'#0d9488',bg:'#f0fdfa',border:'#99f6e4',selBg:'#eafaf7',emoji:'😌',desc:'맑은 호수처럼 편안하고 안정적이에요'},
-  {value:10,label:'지루함',  color:'#16a34a',bg:'#f0fdf4',border:'#bbf7d0',selBg:'#e8fced',emoji:'😑',desc:'새싹처럼 조용하고 아직 흥미가 안 나요'},
-  {value: 0,label:'불안',    color:'#2563eb',bg:'#eff6ff',border:'#bfdbfe',selBg:'#e6f0ff',emoji:'😰',desc:'깊은 바다속처럼 마음이 차갑고 떨려요'},
+// Firebase REST API 함수들
+async function dbRead(room) {
+  try {
+    const res = await fetch(`${DB_URL}/rooms/${room}/responses.json`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    if (!data) return [];
+    return Object.values(data);
+  } catch { return []; }
+}
+
+async function dbPush(room, response) {
+  try {
+    await fetch(`${DB_URL}/rooms/${room}/responses/${response.id}.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(response)
+    });
+  } catch(e) { console.warn('저장 실패:', e); }
+}
+
+async function dbClear(room) {
+  try {
+    await fetch(`${DB_URL}/rooms/${room}/responses.json`, { method: 'DELETE' });
+  } catch(e) { console.warn('초기화 실패:', e); }
+}
+
+// 로컬 백업 (같은 기기 탭 간 동기화용)
+const STORE_KEY = r => `maum_on_${r}`;
+function loadRes(r) { try { return JSON.parse(localStorage.getItem(STORE_KEY(r)) || '[]') } catch { return [] } }
+function saveRes(r, d) { localStorage.setItem(STORE_KEY(r), JSON.stringify(d)) }
+
+// ════════════════════════════════════════════════
+//  감정 데이터
+// ════════════════════════════════════════════════
+const EMOTIONS = [
+  { value:40, label:'매우 화남', color:'#ea580c', bg:'#fff4ee', border:'#fed7aa', selBg:'#fff0e6', emoji:'🔥', desc:'속이 뜨겁고 붉은 불길처럼 화가 나요' },
+  { value:30, label:'기쁨',     color:'#d97706', bg:'#fffbeb', border:'#fde68a', selBg:'#fff8e1', emoji:'😄', desc:'햇살처럼 밝고 기분 좋은 설렘이 있어요' },
+  { value:20, label:'평온함',   color:'#0d9488', bg:'#f0fdfa', border:'#99f6e4', selBg:'#eafaf7', emoji:'😌', desc:'맑은 호수처럼 편안하고 안정적이에요' },
+  { value:10, label:'지루함',   color:'#16a34a', bg:'#f0fdf4', border:'#bbf7d0', selBg:'#e8fced', emoji:'😑', desc:'새싹처럼 조용하고 아직 흥미가 안 나요' },
+  { value: 0, label:'불안',     color:'#2563eb', bg:'#eff6ff', border:'#bfdbfe', selBg:'#e6f0ff', emoji:'😰', desc:'깊은 바다속처럼 마음이 차갑고 떨려요' },
 ];
-const getEmo=v=>EMOTIONS.find(e=>e.value===v)||EMOTIONS[2];
-function tempColor(t){if(t>=35)return'#ea580c';if(t>=25)return'#d97706';if(t>=15)return'#0d9488';if(t>=5)return'#16a34a';return'#2563eb';}
+const getEmo = v => EMOTIONS.find(e => e.value === v) || EMOTIONS[2];
+function tempColor(t) { if(t>=35) return '#ea580c'; if(t>=25) return '#d97706'; if(t>=15) return '#0d9488'; if(t>=5) return '#16a34a'; return '#2563eb'; }
 
-// ══ URL ══
-function getParams(){const p=new URLSearchParams(location.search);return{role:p.get('role'),room:(p.get('room')||'').toUpperCase()};}
-function setUrl(role,room){history.replaceState({},'',`${location.pathname}?role=${role}&room=${room}`);}
+// URL 파라미터
+function getParams() { const p = new URLSearchParams(location.search); return { role: p.get('role'), room: (p.get('room')||'').toUpperCase() }; }
+function setUrl(role, room) { history.replaceState({}, '', `${location.pathname}?role=${role}&room=${room}`); }
 
-// ══ 상태 ══
-let S={role:null,room:'',roomInput:'',responses:[],selTemp:20,reason:'',ok:false,bubbles:[],joinInput:''};
-let ch=null,si=null;
-const ROOT=document.getElementById('root');
+// 전역 상태
+let S = { role:null, room:'', roomInput:'', responses:[], selTemp:20, reason:'', ok:false, bubbles:[], joinInput:'' };
+let ch = null, si = null;
+const ROOT = document.getElementById('root');
 
-function render(){
-  // student이지만 방코드 없으면 → 방 입력 화면
-  if(S.role==='student'&&!S.room){ROOT.innerHTML=tpl_join();bind();return;}
-  ROOT.innerHTML=S.role==='teacher'?tpl_teacher():S.role==='student'?tpl_student():tpl_lobby();
+// ════════════════════════════════════════════════
+//  렌더링
+// ════════════════════════════════════════════════
+function render() {
+  if (S.role === 'student' && !S.room) { ROOT.innerHTML = tpl_join(); bind(); return; }
+  ROOT.innerHTML = S.role === 'teacher' ? tpl_teacher() : S.role === 'student' ? tpl_student() : tpl_lobby();
   bind();
 }
 
-// ══ LOBBY ══
-function tpl_lobby(){return`
+function tpl_lobby() { return `
 <div class="lobby">
   <div class="lobby-card">
     <span class="pill lobby-badge">🌿 온마음 서포터즈 · 사회정서교육</span>
-    <div class="lobby-title brand">마음<span style="font-style:normal">on</span> 프로젝트</div>
+    <div class="lobby-title brand">마음<span>on</span> 프로젝트</div>
     <div class="lobby-sub">지금 내 마음은 몇 도예요?<br/>솔직한 온도로 우리 반 온도계를 채워봐요.</div>
-
     <label style="font-size:.68rem;font-weight:700;color:#9d8fc4;letter-spacing:.07em;display:block;margin-bottom:.4rem">클래스 방 코드 (선택)</label>
-    <input id="roomInput" class="lobby-input" type="text"
-      placeholder="예: ON-104  (비워두면 자동 생성)" value="${S.roomInput}"/>
-
+    <input id="roomInput" class="lobby-input" type="text" placeholder="예: ON-104  (비워두면 자동 생성)" value="${S.roomInput}"/>
     <div class="role-grid">
-      <button class="role-btn teacher" id="btn-teacher">
-        <span class="rb-icon">📺</span><span>교사용<br>빔 화면</span>
-      </button>
-      <button class="role-btn student" id="btn-student">
-        <span class="rb-icon">📱</span><span>학생용<br>입력 화면</span>
-      </button>
+      <button class="role-btn teacher" id="btn-teacher"><span class="rb-icon">📺</span><span>교사용<br>빔 화면</span></button>
+      <button class="role-btn student" id="btn-student"><span class="rb-icon">📱</span><span>학생용<br>입력 화면</span></button>
     </div>
-    <p class="lobby-tip">
-      💡 교사가 먼저 빔 화면을 열면 방 코드가 표시됩니다.<br/>
-      학생들은 방 코드를 입력하거나 URL 파라미터로 바로 접속할 수 있어요.
-    </p>
+    <p class="lobby-tip">💡 교사가 먼저 빔 화면을 열면 방 코드가 표시됩니다.<br/>학생들은 방 코드를 입력해 참여해요.</p>
   </div>
-</div>`;}
+</div>`; }
 
-// ══ STUDENT JOIN (방 코드 입력) ══
-function tpl_join(){return`
+function tpl_join() { return `
 <div class="student-wrap">
   <div class="join-card">
     <div style="text-align:center">
@@ -460,35 +255,27 @@ function tpl_join(){return`
       <div class="s-project-name brand" style="margin-top:.6rem">마음<span>on</span> 프로젝트</div>
       <p style="font-size:.8rem;color:#6b5e8a;margin-top:.4rem;line-height:1.7">칠판의 빔 화면에 표시된<br/><strong style="color:#7c3aed">방 코드</strong>를 입력하고 참여하세요!</p>
     </div>
-
     <div>
       <label style="font-size:.72rem;font-weight:700;color:#9d8fc4;display:block;margin-bottom:.4rem;text-align:center">방 코드 입력</label>
-      <input id="joinInput" class="join-input" type="text"
-        placeholder="예: ON-1234" value="${S.joinInput}" maxlength="12"/>
+      <input id="joinInput" class="join-input" type="text" placeholder="예: ON-1234" value="${S.joinInput}" maxlength="12"/>
     </div>
-
-    <button class="join-btn" id="btn-join" ${!S.joinInput.trim()?'disabled':''}>
-      입장하기 →
-    </button>
-
-    <div class="back-link" style="margin-top:0">
-      <button id="btn-back">← 대기방으로</button>
-    </div>
+    <button class="join-btn" id="btn-join" ${!S.joinInput.trim()?'disabled':''}>입장하기 →</button>
+    <div class="back-link" style="margin-top:0"><button id="btn-back">← 대기방으로</button></div>
   </div>
-</div>`;}
+</div>`; }
 
-// ══ TEACHER ══
-function tpl_teacher(){
-  const{room,responses,bubbles}=S;
-  const cnt={40:0,30:0,20:0,10:0,0:0};
-  responses.forEach(r=>{if(cnt[r.temp]!==undefined)cnt[r.temp]++;});
-  const tot=responses.length||1;
-  const avg=responses.length===0?20:Math.round(responses.reduce((a,c)=>a+c.temp,0)/responses.length);
-  const ac=tempColor(avg);
-  const tubeH=350;
-  const layers=EMOTIONS.slice().reverse().map(e=>({...e,hpx:Math.round(cnt[e.value]/tot*tubeH)}));
+function tpl_teacher() {
+  const { room, responses, bubbles } = S;
+  const cnt = {40:0,30:0,20:0,10:0,0:0};
+  responses.forEach(r => { if (cnt[r.temp] !== undefined) cnt[r.temp]++; });
+  const tot = responses.length || 1;
+  const avg = responses.length === 0 ? 20 : Math.round(responses.reduce((a,c) => a+c.temp, 0) / responses.length);
+  const ac = tempColor(avg);
+  const tubeH = 350;
+  const layers = EMOTIONS.slice().reverse().map(e => ({...e, hpx: Math.round(cnt[e.value]/tot*tubeH)}));
+  const dbOk = DB_URL.indexOf('여기에') === -1;
 
-  return`
+  return `
 <div class="teacher-wrap">
   <div class="t-header">
     <div style="display:flex;flex-direction:column;gap:.2rem">
@@ -498,12 +285,18 @@ function tpl_teacher(){
     <div class="t-header-right">
       <span class="pill room-pill">${room}</span>
       <span class="pill count-pill">참여 <strong>${responses.length}</strong>명</span>
+      <span class="${dbOk?'sync-pill-ok':'sync-pill-err'}">${dbOk?'● 실시간 연결됨':'⚠ DB 설정 필요'}</span>
       <button class="reset-btn" id="btn-reset">↺ 초기화</button>
     </div>
   </div>
 
+  ${!dbOk ? `<div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:1rem;padding:.8rem 1.1rem;margin-bottom:.7rem;font-size:.75rem;color:#92400e;line-height:1.8">
+    ⚠️ <strong>Firebase DB URL 설정이 필요합니다.</strong><br/>
+    index.html 파일에서 <code style="background:#fef3c7;padding:.1rem .3rem;border-radius:.3rem">DB_URL = '여기에-본인-firebase-url-입력...'</code> 부분을<br/>
+    Firebase 콘솔에서 복사한 실제 URL로 교체해주세요.
+  </div>` : ''}
+
   <div class="t-main" style="flex:1;min-height:0">
-    <!-- LEFT -->
     <div class="t-left">
       <div class="t-card">
         <div class="qr-inner">
@@ -523,9 +316,9 @@ function tpl_teacher(){
       <div class="t-card" style="flex:1;display:flex;flex-direction:column;">
         <div class="stats-inner">
           <div class="stats-head">실시간 감정 분포</div>
-          ${EMOTIONS.map(e=>{
-            const c=cnt[e.value]||0;const p=(c/tot*100).toFixed(0);
-            return`<div class="stat-row">
+          ${EMOTIONS.map(e => {
+            const c = cnt[e.value]||0; const p = (c/tot*100).toFixed(0);
+            return `<div class="stat-row">
               <div class="stat-top">
                 <span style="display:flex;align-items:center;gap:.4rem">
                   <span style="width:7px;height:7px;border-radius:50%;background:${e.color};display:inline-block"></span>
@@ -540,28 +333,26 @@ function tpl_teacher(){
       </div>
     </div>
 
-    <!-- CENTER -->
     <div class="thermo-card">
       <div class="thermo-heading">✦ 우리 반 마음 온도계</div>
       <div class="thermo-outer">
         <div class="thermo-scale">
-          ${EMOTIONS.map(e=>`
+          ${EMOTIONS.map(e => `
             <div class="scale-tick">
               <span style="color:${avg>=e.value?e.color:'#c4b5fd'}">${e.emoji} ${e.value}℃</span>
               <span class="scale-dot" style="background:${e.color};opacity:${avg>=e.value?1:.3}"></span>
             </div>`).join('')}
         </div>
-
         <div class="thermo-body">
           <div class="tube-glass">
-            ${layers.map((l,i)=>`
+            ${layers.map((l,i) => `
               <div class="tube-layer" style="height:${l.hpx}px;background:${l.color};opacity:.82">
                 <div class="bubble" style="width:5px;height:5px;left:7px;animation-delay:${i*.4}s;animation-duration:${2.2+i*.3}s"></div>
                 <div class="bubble" style="width:3px;height:3px;left:18px;animation-delay:${i*.65}s;animation-duration:${2.7+i*.2}s"></div>
               </div>`).join('')}
           </div>
           <div class="reason-bubbles-wrap">
-            ${bubbles.map(b=>`
+            ${bubbles.map(b => `
               <div class="reason-bubble" style="border-left:3px solid ${b.color};left:${b.left}%;animation-delay:${b.delay}s">
                 ${b.text}
               </div>`).join('')}
@@ -570,19 +361,17 @@ function tpl_teacher(){
             <div class="bulb-inner" style="background:${ac}">${getEmo(avg).emoji}</div>
           </div>
         </div>
-
         <div class="thermo-summary">
           <div class="avg-label">우리 반 평균 감정</div>
           <div class="avg-num" style="color:${ac}">${avg}<span class="avg-unit">℃</span></div>
           <div class="avg-desc">현재 우리 반은<br/><strong style="color:${ac}">${getEmo(avg).label}</strong><br/>주변에 있어요.</div>
-          ${responses.length>0?`<div style="margin-top:.7rem;font-size:.65rem;color:#9d8fc4;line-height:2">
+          ${responses.length>0 ? `<div style="margin-top:.7rem;font-size:.65rem;color:#9d8fc4;line-height:2">
             ${EMOTIONS.filter(e=>cnt[e.value]>0).map(e=>`<div>${e.emoji} ${e.label}: <strong style="color:${e.color}">${cnt[e.value]}명</strong></div>`).join('')}
-          </div>`:''}
+          </div>` : ''}
         </div>
       </div>
     </div>
 
-    <!-- RIGHT -->
     <div class="feed-card">
       <div class="feed-head">
         <span class="feed-head-title">💬 친구들의 마음 한마디</span>
@@ -590,10 +379,10 @@ function tpl_teacher(){
       </div>
       <div class="feed-list">
         ${responses.length===0
-          ?`<div class="feed-empty">아직 제출된 마음이 없어요 🌿<br/>학생들이 방 코드로 접속하면<br/>여기에 실시간으로 나타납니다.</div>`
-          :[...responses].reverse().map(r=>{
-              const e=getEmo(r.temp);
-              return`<div class="feed-item" style="border-color:${e.color}30">
+          ? `<div class="feed-empty">아직 제출된 마음이 없어요 🌿<br/>학생들이 방 코드로 접속하면<br/>여기에 실시간으로 나타납니다.</div>`
+          : [...responses].reverse().map(r => {
+              const e = getEmo(r.temp);
+              return `<div class="feed-item" style="border-color:${e.color}30">
                 <span class="feed-badge" style="background:${e.color}">${e.emoji} ${r.temp}℃</span>
                 <div>
                   <div class="feed-reason">${r.reason}</div>
@@ -609,13 +398,12 @@ function tpl_teacher(){
   <div class="t-footer">
     💡 <strong>진행 멘트 제안 :</strong> "마음 온도에는 올바른 정답이 없습니다. 0도도 40도도 전부 오늘 나를 표현하는 솔직한 신호예요. 화면에 차오르는 온도들과 이야기들을 보며, 온마음 서포터즈로서 우리가 서로에게 어떤 배려와 연대가 필요한지 함께 생각해봐요."
   </div>
-</div>`;}
+</div>`; }
 
-// ══ STUDENT ══
-function tpl_student(){
-  const{room,selTemp,reason,ok}=S;
-  const emo=getEmo(selTemp);
-  return`
+function tpl_student() {
+  const { room, selTemp, reason, ok } = S;
+  const emo = getEmo(selTemp);
+  return `
 <div class="student-wrap">
   <div class="student-card">
     <div class="s-header">
@@ -628,34 +416,27 @@ function tpl_student(){
         <span style="font-size:.65rem;color:#c4b5fd">📍 ${room} 참여 중</span>
       </div>
     </div>
-
-    ${ok?`
+    ${ok ? `
       <div class="success-screen">
         <div class="success-anim">✅</div>
         <div class="success-title">마음 보내기 완료!</div>
-        <div class="success-sub">
-          교실 앞 화면의 온도계에<br/>내 마음 온도가 차오르고 있어요.<br/>함께 확인해봐요! 🌡️
-        </div>
+        <div class="success-sub">교실 앞 화면의 온도계에<br/>내 마음 온도가 차오르고 있어요.<br/>함께 확인해봐요! 🌡️</div>
         <button class="again-btn" id="btn-again">추가로 한마디 더 보내기</button>
       </div>
-    `:`
+    ` : `
       <div>
-        <p style="font-size:.73rem;color:#9d8fc4;margin:0 0 .8rem;line-height:1.7">
-          지금 나의 마음을 가장 잘 나타내는 온도를 골라보세요.
-        </p>
-        ${EMOTIONS.map(e=>{
-          const sel=selTemp===e.value;
-          return`<button class="emo-btn${sel?' selected':''}" data-temp="${e.value}"
-            style="--sel-color:${e.color};--sel-bg:${e.selBg}">
+        <p style="font-size:.73rem;color:#9d8fc4;margin:0 0 .8rem;line-height:1.7">지금 나의 마음을 가장 잘 나타내는 온도를 골라보세요.</p>
+        ${EMOTIONS.map(e => {
+          const sel = selTemp === e.value;
+          return `<button class="emo-btn${sel?' selected':''}" data-temp="${e.value}" style="--sel-color:${e.color};--sel-bg:${e.selBg}">
             <span class="emo-icon" style="background:${e.bg};border:1.5px solid ${e.border}">${e.emoji}</span>
             <div style="flex:1">
               <div class="emo-name">${e.value}℃ · ${e.label}</div>
               <div class="emo-desc">${e.desc}</div>
             </div>
-            ${sel?`<span class="selected-badge" style="background:${e.color}">선택됨</span>`:''}
+            ${sel ? `<span class="selected-badge" style="background:${e.color}">선택됨</span>` : ''}
           </button>`;
         }).join('')}
-
         <div class="reason-area" style="background:${emo.bg};border-color:${emo.border}">
           <label>왜 지금 마음이 ${selTemp}℃ (${emo.label}) 인가요?</label>
           <textarea id="reasonInput" placeholder="예: 새 친구들을 만나 설레면서도 조금 떨려요." maxlength="50">${reason}</textarea>
@@ -664,136 +445,160 @@ function tpl_student(){
             <span>${reason.length}/50자</span>
           </div>
         </div>
-
-        <button class="submit-btn" id="btn-submit"
-          style="background:linear-gradient(135deg,${emo.color}dd,${emo.color})"
-          ${!reason.trim()?'disabled':''}>
+        <button class="submit-btn" id="btn-submit" style="background:linear-gradient(135deg,${emo.color}dd,${emo.color})" ${!reason.trim()?'disabled':''}>
           ✈️ 마음 보내기
         </button>
       </div>
     `}
-
-    <div class="back-link">
-      <button id="btn-back">대기방으로 이동</button>
-    </div>
+    <div class="back-link"><button id="btn-back">대기방으로 이동</button></div>
   </div>
-</div>`;}
+</div>`; }
 
-// ══ 이벤트 ══
-function bind(){
-  if(!S.role){
-    document.getElementById('roomInput')?.addEventListener('input',e=>{S.roomInput=e.target.value.toUpperCase();});
-    document.getElementById('btn-teacher')?.addEventListener('click',()=>goRole('teacher'));
-    document.getElementById('btn-student')?.addEventListener('click',()=>goRole('student'));
+// ════════════════════════════════════════════════
+//  이벤트 바인딩
+// ════════════════════════════════════════════════
+function bind() {
+  if (!S.role) {
+    document.getElementById('roomInput')?.addEventListener('input', e => { S.roomInput = e.target.value.toUpperCase(); });
+    document.getElementById('btn-teacher')?.addEventListener('click', () => goRole('teacher'));
+    document.getElementById('btn-student')?.addEventListener('click', () => goRole('student'));
   }
-  // 방 코드 입력 화면 (student, no room)
-  if(S.role==='student'&&!S.room){
-    const ji=document.getElementById('joinInput');
-    const jb=document.getElementById('btn-join');
-    ji?.addEventListener('input',e=>{
-      S.joinInput=e.target.value.toUpperCase();
-      if(jb)jb.disabled=!e.target.value.trim();
+  if (S.role === 'student' && !S.room) {
+    const ji = document.getElementById('joinInput');
+    const jb = document.getElementById('btn-join');
+    ji?.addEventListener('input', e => {
+      S.joinInput = e.target.value.toUpperCase();
+      if (jb) jb.disabled = !e.target.value.trim();
     });
-    jb?.addEventListener('click',()=>{
-      const room=S.joinInput.trim().toUpperCase();
-      if(!room)return;
-      S.room=room;S.joinInput='';
-      setUrl('student',room);
+    jb?.addEventListener('click', () => {
+      const room = S.joinInput.trim().toUpperCase();
+      if (!room) return;
+      S.room = room; S.joinInput = '';
+      setUrl('student', room);
       initSync();
       render();
     });
-    // 엔터키 지원
-    ji?.addEventListener('keydown',e=>{if(e.key==='Enter'&&S.joinInput.trim())jb?.click();});
-    document.getElementById('btn-back')?.addEventListener('click',()=>{S.role=null;render();});
+    ji?.addEventListener('keydown', e => { if (e.key === 'Enter' && S.joinInput.trim()) jb?.click(); });
+    document.getElementById('btn-back')?.addEventListener('click', () => { S.role = null; render(); });
     return;
   }
-  if(S.role==='teacher'){
-    document.getElementById('btn-reset')?.addEventListener('click',doReset);
+  if (S.role === 'teacher') {
+    document.getElementById('btn-reset')?.addEventListener('click', doReset);
   }
-  if(S.role==='student'&&S.room){
-    document.querySelectorAll('.emo-btn').forEach(b=>b.addEventListener('click',()=>{S.selTemp=+b.dataset.temp;render();}));
-    document.getElementById('reasonInput')?.addEventListener('input',e=>{
-      S.reason=e.target.value;
-      const fc=document.querySelector('.reason-footer span:last-child');
-      if(fc)fc.textContent=`${e.target.value.length}/50자`;
-      const sb=document.getElementById('btn-submit');
-      if(sb)sb.disabled=!e.target.value.trim();
+  if (S.role === 'student' && S.room) {
+    document.querySelectorAll('.emo-btn').forEach(b => b.addEventListener('click', () => { S.selTemp = +b.dataset.temp; render(); }));
+    document.getElementById('reasonInput')?.addEventListener('input', e => {
+      S.reason = e.target.value;
+      const fc = document.querySelector('.reason-footer span:last-child');
+      if (fc) fc.textContent = `${e.target.value.length}/50자`;
+      const sb = document.getElementById('btn-submit');
+      if (sb) sb.disabled = !e.target.value.trim();
     });
-    document.getElementById('btn-submit')?.addEventListener('click',doSubmit);
-    document.getElementById('btn-again')?.addEventListener('click',()=>{S.ok=false;render();});
-    document.getElementById('btn-back')?.addEventListener('click',()=>{S.role=null;S.room='';render();});
+    document.getElementById('btn-submit')?.addEventListener('click', doSubmit);
+    document.getElementById('btn-again')?.addEventListener('click', () => { S.ok = false; render(); });
+    document.getElementById('btn-back')?.addEventListener('click', () => { S.role = null; S.room = ''; render(); });
   }
 }
 
-// ══ 액션 ══
-function goRole(role){
-  const ri=document.getElementById('roomInput');
-  const rv=(ri?.value||S.roomInput||'').trim().toUpperCase();
-  if(role==='teacher'){
-    const room=rv||('ON-'+Math.floor(1000+Math.random()*9000));
-    S.room=room;S.role=role;
-    setUrl(role,room);initSync();render();
-  }else{
-    // student → 방 코드 입력 화면으로
-    S.role='student';S.room='';S.joinInput=rv;
+// ════════════════════════════════════════════════
+//  액션
+// ════════════════════════════════════════════════
+function goRole(role) {
+  const ri = document.getElementById('roomInput');
+  const rv = (ri?.value || S.roomInput || '').trim().toUpperCase();
+  if (role === 'teacher') {
+    const room = rv || ('ON-' + Math.floor(1000 + Math.random() * 9000));
+    S.room = room; S.role = role;
+    setUrl(role, room); initSync(); render();
+  } else {
+    S.role = 'student'; S.room = ''; S.joinInput = rv;
     render();
   }
 }
-function doReset(){
-  if(!confirm('모든 응답을 초기화하시겠습니까?'))return;
-  S.responses=[];S.bubbles=[];
-  saveRes(S.room,[]);
-  if(ch)ch.postMessage({type:'RESET'});
+
+async function doReset() {
+  if (!confirm('모든 응답을 초기화하시겠습니까?')) return;
+  S.responses = []; S.bubbles = [];
+  saveRes(S.room, []);
+  await dbClear(S.room);
+  if (ch) ch.postMessage({ type: 'RESET' });
   render();
 }
-function doSubmit(){
-  const r=S.reason.trim();if(!r)return;
-  const res={
-    id:Date.now()+'_'+Math.floor(Math.random()*9999),
-    temp:S.selTemp,reason:r,
-    timestamp:new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})
+
+async function doSubmit() {
+  const r = S.reason.trim(); if (!r) return;
+  const sb = document.getElementById('btn-submit');
+  if (sb) { sb.disabled = true; sb.innerHTML = '전송 중...'; }
+  const res = {
+    id: Date.now() + '_' + Math.floor(Math.random() * 9999),
+    temp: S.selTemp, reason: r,
+    timestamp: new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit' })
   };
-  S.responses=[...S.responses,res];
-  saveRes(S.room,S.responses);
-  if(ch)ch.postMessage({type:'NEW',payload:res});
-  S.reason='';S.ok=true;render();
+  S.responses = [...S.responses, res];
+  saveRes(S.room, S.responses);
+  await dbPush(S.room, res);           // 🔥 Firebase에 저장 → 교사 화면에 2초 내 반영
+  if (ch) ch.postMessage({ type: 'NEW', payload: res });
+  S.reason = ''; S.ok = true; render();
 }
 
-// ══ 동기화 ══
-function initSync(){
-  if(ch){ch.close();ch=null;}if(si){clearInterval(si);si=null;}
-  const{room}=S;if(!room)return;
-  S.responses=loadRes(room);
-  ch=new BroadcastChannel(`maum_on_${room}`);
-  ch.onmessage=ev=>{
-    if(ev.data.type==='NEW'){
-      const r=ev.data.payload;
-      if(S.responses.some(x=>x.id===r.id))return;
-      S.responses=[...S.responses,r];
-      if(S.role==='teacher'){addBubble(r);render();}
-    }else if(ev.data.type==='RESET'){S.responses=[];S.bubbles=[];render();}
-  };
-  si=setInterval(()=>{
-    const fr=loadRes(room);
-    if(fr.length!==S.responses.length){
-      const ni=fr.filter(r=>!S.responses.some(x=>x.id===r.id));
-      S.responses=fr;
-      if(S.role==='teacher'&&ni.length>0){ni.forEach(addBubble);render();}
+// ════════════════════════════════════════════════
+//  실시간 동기화
+// ════════════════════════════════════════════════
+function initSync() {
+  if (ch) { ch.close(); ch = null; }
+  if (si) { clearInterval(si); si = null; }
+  const { room } = S; if (!room) return;
+
+  // 로컬 초기 로드
+  S.responses = loadRes(room);
+
+  // BroadcastChannel: 같은 기기 탭 간 즉시 동기화
+  try {
+    ch = new BroadcastChannel(`maum_on_${room}`);
+    ch.onmessage = ev => {
+      if (ev.data.type === 'NEW') {
+        const r = ev.data.payload;
+        if (S.responses.some(x => x.id === r.id)) return;
+        S.responses = [...S.responses, r];
+        saveRes(room, S.responses);
+        if (S.role === 'teacher') { addBubble(r); render(); }
+      } else if (ev.data.type === 'RESET') {
+        S.responses = []; S.bubbles = []; saveRes(room, []); render();
+      }
+    };
+  } catch(e) { ch = null; }
+
+  // 🔥 Firebase 폴링: 다른 기기(학생 폰 ↔ 교사 PC) 간 2초마다 동기화
+  si = setInterval(async () => {
+    const fr = await dbRead(room);
+    const newItems = fr.filter(r => !S.responses.some(x => x.id === r.id));
+    const removed = S.responses.length > fr.length;
+    if (newItems.length > 0 || removed) {
+      S.responses = fr;
+      saveRes(room, fr);
+      if (newItems.length > 0) newItems.forEach(r => addBubble(r));
+      render();
     }
-  },1500);
-}
-function addBubble(res){
-  const e=getEmo(res.temp);
-  const b={id:res.id,text:res.reason.length>18?res.reason.slice(0,18)+'…':res.reason,color:e.color,delay:Math.random()*.8,left:12+Math.random()*70};
-  S.bubbles=[...S.bubbles.slice(-8),b];
-  setTimeout(()=>{S.bubbles=S.bubbles.filter(x=>x.id!==b.id);},8000);
+  }, 2000);
+
+  // 첫 진입 시 Firebase에서 즉시 최신 데이터 로드
+  dbRead(room).then(fr => {
+    if (fr.length > 0) { S.responses = fr; saveRes(room, fr); render(); }
+  });
 }
 
-// ══ 초기 실행 ══
-(()=>{
-  const{role,room}=getParams();
-  if(role&&room){S.role=role;S.room=room;initSync();}
-  else if(role==='student'){S.role='student';S.room='';}
+function addBubble(res) {
+  const e = getEmo(res.temp);
+  const b = { id: res.id, text: res.reason.length > 18 ? res.reason.slice(0,18)+'…' : res.reason, color: e.color, delay: Math.random()*.8, left: 12 + Math.random()*70 };
+  S.bubbles = [...S.bubbles.slice(-8), b];
+  setTimeout(() => { S.bubbles = S.bubbles.filter(x => x.id !== b.id); }, 8000);
+}
+
+// 초기 실행
+(() => {
+  const { role, room } = getParams();
+  if (role && room) { S.role = role; S.room = room; initSync(); }
+  else if (role === 'student') { S.role = 'student'; S.room = ''; }
   render();
 })();
 </script>
